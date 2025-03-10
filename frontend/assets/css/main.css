@@ -1,0 +1,41 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    @apply bg-background antialiased;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-title {
+    @apply text-4xl font-bold text-center mb-12;
+  }
+  
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  .bg-background {
+      background-image: url('/bg1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+  }
+
+  .text-text {
+      color: #e2e8f0;
+  }
+}
+

@@ -1,0 +1,301 @@
+/* Move all the game-related styles here */
+.game-button {
+  transition: all 0.15s cubic-bezier(0.2, 0, 0.4, 1);
+  letter-spacing: 6px;
+  text-shadow: 
+    0 0 10px rgba(255,255,255,0.5),
+    0 0 20px rgba(255,255,255,0.3),
+    2px 2px 0 rgba(0,0,0,0.5);
+}
+
+.game-button:hover {
+  transform: translateY(-4px) scale(1.03);
+  filter: brightness(1.2);
+  letter-spacing: 8px;
+}
+
+.game-button:active {
+  transform: translateY(2px) scale(0.98);
+  letter-spacing: 4px;
+}
+
+/* Primary Button Styles */
+.primary-button {
+  box-shadow: 0 0 25px rgba(168,85,247,0.4), 
+              0 0 50px rgba(168,85,247,0.2), 
+              inset 0 0 25px rgba(168,85,247,0.3),
+              0 4px 0 rgba(0,0,0,0.5);
+}
+
+.primary-button:active {
+  transform: translateY(4px) scale(0.98);
+  box-shadow: 0 0 25px rgba(168,85,247,0.4), 
+              0 0 50px rgba(168,85,247,0.2), 
+              inset 0 0 25px rgba(168,85,247,0.3),
+              0 0 0 rgba(0,0,0,0.5);
+}
+
+/* Secondary Button Styles */
+.secondary-button {
+  box-shadow: 0 0 25px rgba(255,255,255,0.2), 
+              0 0 50px rgba(255,255,255,0.1), 
+              inset 0 0 25px rgba(255,255,255,0.1),
+              0 4px 0 rgba(0,0,0,0.5);
+}
+
+.secondary-button:active {
+  transform: translateY(4px) scale(0.98);
+  box-shadow: 0 0 25px rgba(255,255,255,0.2), 
+              0 0 50px rgba(255,255,255,0.1), 
+              inset 0 0 25px rgba(255,255,255,0.1),
+              0 0 0 rgba(0,0,0,0.5);
+}
+
+/* Mode-specific Button Styles */
+.game-button.bg-primary\/20 {
+  box-shadow: 0 0 15px rgba(168,85,247,0.3), 
+              inset 0 0 10px rgba(168,85,247,0.2),
+              0 2px 0 rgba(0,0,0,0.5);
+}
+
+.game-button.bg-blue-500\/20 {
+  box-shadow: 0 0 15px rgba(59,130,246,0.3), 
+              inset 0 0 10px rgba(59,130,246,0.2),
+              0 2px 0 rgba(0,0,0,0.5);
+}
+
+/* Animation Classes */
+.animate-float {
+  animation: float 20s linear infinite;
+}
+
+.animate-float-slow {
+  animation: float 30s linear infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.animate-shine {
+  animation: shine 3s linear infinite;
+  opacity: 0.5;
+}
+
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
+
+.animate-pulse-attention {
+  animation: pulse-attention 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Font Classes */
+.font-impact {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.font-comic {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+/* Text Effects */
+.text-shadow-game {
+  text-shadow: 0 0 10px rgba(255,255,255,0.5),
+               0 0 20px rgba(255,255,255,0.3);
+}
+
+/* Container Styles */
+.glass-container {
+  @apply bg-gray-900/80 backdrop-blur-xl border border-white/10 rounded-xl;
+}
+
+/* Word Rotator */
+.word-rotator {
+  @apply relative inline-flex items-center justify-center;
+  width: 400px;
+  height: 120px;
+}
+
+.word-rotator span {
+  @apply absolute flex items-center justify-center text-white;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform-origin: center;
+  font-size: 1.4em;
+  text-shadow: 
+    0 0 30px rgba(255,255,255,0.5),
+    0 0 60px rgba(255,255,255,0.3);
+  letter-spacing: 8px;
+  text-transform: uppercase;
+}
+
+/* Keyframe Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-10%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes pulse-attention {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1);
+    box-shadow: 0 0 15px rgba(168,85,247,0.3);
+  }
+  50% {
+    transform: scale(1.02);
+    filter: brightness(1.2);
+    box-shadow: 0 0 25px rgba(168,85,247,0.5);
+  }
+}
+
+@keyframes float-particle {
+  0% {
+    transform: translate3d(-10%, -10%, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(10%, -5%, 0) rotate(90deg);
+  }
+  50% {
+    transform: translate3d(5%, 10%, 0) rotate(180deg);
+  }
+  75% {
+    transform: translate3d(-5%, 5%, 0) rotate(270deg);
+  }
+  100% {
+    transform: translate3d(-10%, -10%, 0) rotate(360deg);
+  }
+}
+
+@keyframes float-particle-reverse {
+  0% {
+    transform: translate3d(10%, 10%, 0) rotate(360deg);
+  }
+  25% {
+    transform: translate3d(-10%, 5%, 0) rotate(270deg);
+  }
+  50% {
+    transform: translate3d(-5%, -10%, 0) rotate(180deg);
+  }
+  75% {
+    transform: translate3d(5%, -5%, 0) rotate(90deg);
+  }
+  100% {
+    transform: translate3d(10%, 10%, 0) rotate(0deg);
+  }
+}
+
+/* Transition Classes */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Page Transitions */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+@keyframes smoke-xfast {
+  0% {
+    transform: translate3d(-10%, -10%, 0);
+  }
+  100% {
+    transform: translate3d(10%, 10%, 0);
+  }
+}
+
+@keyframes smoke-fast {
+  0% {
+    transform: translate3d(5%, -15%, 0);
+  }
+  100% {
+    transform: translate3d(-5%, 15%, 0);
+  }
+}
+
+@keyframes smoke-medium {
+  0% {
+    transform: translate3d(-15%, 5%, 0);
+  }
+  100% {
+    transform: translate3d(15%, -5%, 0);
+  }
+}
+
+@keyframes smoke-slow {
+  0% {
+    transform: translate3d(10%, 10%, 0);
+  }
+  100% {
+    transform: translate3d(-10%, -10%, 0);
+  }
+}
+
+.animate-smoke-xfast {
+  animation: smoke-xfast 20s linear infinite alternate;
+}
+
+.animate-smoke-fast {
+  animation: smoke-fast 25s linear infinite alternate;
+}
+
+.animate-smoke-medium {
+  animation: smoke-medium 30s linear infinite alternate;
+}
+
+.animate-smoke-slow {
+  animation: smoke-slow 35s linear infinite alternate;
+}
+
+/* ... rest of the styles ... */ 
